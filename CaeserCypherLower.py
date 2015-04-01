@@ -17,11 +17,11 @@ while 1:#Inifinte loop
 for i in range(len(string)):#Repeats for the length of your message
     string = list(string)#Turns your message into individual letters
     if string[i] == " ":
-        translated += " "#If there is a space, leave it as a space
+        translated += " "#If there is a space, it will leave it as a space
     else:
         num = ord(string[i])-97#Turns it into ascii, in relation to the charcters in var 'letters'.
         num += indent*pos_neg#Will either add(encrypt) or subtract(decrypt) the indent or key that you have chosen.
-        num = num%26#num modulus 26
+        num = num%26#num modulus 26(letters in the alphabet)
         translated += letters[num]#Adds the letter to this variable
     savedFile = open('Encrypted.txt', 'w')
     savedFile.write(translated)#Saves it to a file
